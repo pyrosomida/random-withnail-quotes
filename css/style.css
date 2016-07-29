@@ -1,0 +1,47 @@
+@import url(https://fonts.googleapis.com/css?family=Averia+Serif+Libre:700,700italic,400);
+
+body {
+  background-color:#B0A567;
+  color:#2F1A02;
+  font-family: 'Averia Serif Libre', cursive;
+}
+
+h1, #intro {
+  text-align:center;
+}
+
+a {
+  color: #993300; 
+}
+
+a:visited {
+  color: #660000;  
+}
+
+a:hover, a:focus {
+ color: #cc3300; 
+}
+
+#namediv {
+  font-style: italic;
+}
+
+#quotediv {
+  padding-top: 2%;
+}
+
+#quotebtn {
+  background-color: #666600;
+  margin: 10% 0 5% 0;
+  color: #efe5d6;
+  box-shadow: 2px 2px 2px black;
+}
+
+#quotebtn:hover {
+  background-color:#993300;
+}
+
+#quotewell {
+  background-color: rgba(255,255,204,0.7);
+  border-color: rgba(255,255,204,1);
+}
