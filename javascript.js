@@ -41,37 +41,37 @@ $(document).ready(function() {
 
   //tweet function
   function tweetQuote(quote, name, hash) {
-      var thisQuote = quote,
-        thisName = name,
-        filmHash = hash,
-        quoteTweet = thisName + ": " + thisQuote,
-        quoteTweetHash = thisName + ": " + thisQuote + filmHash;
-      if (quoteTweetHash.length > 140) {
-        // calculate how much to shorten quote by (-5 for 2 x spaces, 1 x hash and 3 x dots )
-        var amountToChop = 140 - filmHash.length - 5,
-          quoteDots = "...";
-        //cut tweet down to 140 chars minus the quoter & film name hashtag
-        quoteTweet = quoteTweet.slice(0, amountToChop);
-        //check if quote ends mid-word after chopping
-        for (var i = quoteTweet.length - 1; i > 0; i--) {
-          if (quoteTweet[i] === " ") {
-            quoteTweet = quoteTweet.slice(0, i); //take off character
-            break;
-          }
+    var thisQuote = quote,
+      thisName = name,
+      filmHash = hash,
+      quoteTweet = thisName + ": " + thisQuote,
+      quoteTweetHash = thisName + ": " + thisQuote + filmHash;
+    if (quoteTweetHash.length > 140) {
+      // calculate how much to shorten quote by (-5 for 2 x spaces, 1 x hash and 3 x dots )
+      var amountToChop = 140 - filmHash.length - 5,
+        quoteDots = "...";
+      //cut tweet down to 140 chars minus the quoter & film name hashtag
+      quoteTweet = quoteTweet.slice(0, amountToChop);
+      //check if quote ends mid-word after chopping
+      for (var i = quoteTweet.length - 1; i > 0; i--) {
+        if (quoteTweet[i] === " ") {
+          quoteTweet = quoteTweet.slice(0, i); //take off character
+          break;
         }
-        quoteTweet += quoteDots;
       }
-      $("#tweet_container").empty(); //get rid of any previous Twitter button
-      //tweet button
-      twttr.widgets.createHashtagButton(
-        filmHash,
-        document.getElementById("tweet_container"), {
-          size: "large",
-          text: quoteTweet
-        }
-      ); // /tweet button
+      quoteTweet += quoteDots;
     }
-    // /tweet function
+    $("#tweet_container").empty(); //get rid of any previous Twitter button
+    //tweet button
+    twttr.widgets.createHashtagButton(
+      filmHash,
+      document.getElementById("tweet_container"), {
+        size: "large",
+        text: quoteTweet
+      }
+    ); // /tweet button
+  }
+  // /tweet function
 
   function giveQuote() {
     //set up variables
